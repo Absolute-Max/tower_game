@@ -25,6 +25,16 @@ public class TGMenuView extends GContainer{
 		play_btn.setStateSprite(ButtonState.HOVERED, hover_img);
 		play_btn.setStateSprite(ButtonState.PRESSED, pressed_img);
 		
+		GButton info_btn = new GButton();
+		info_btn.setStateSprite(ButtonState.NONE, none_img);
+		info_btn.setStateSprite(ButtonState.HOVERED, hover_img);
+		info_btn.setStateSprite(ButtonState.PRESSED, pressed_img);
+		
+		GButton quit_btn = new GButton();
+		quit_btn.setStateSprite(ButtonState.NONE, none_img);
+		quit_btn.setStateSprite(ButtonState.HOVERED, hover_img);
+		quit_btn.setStateSprite(ButtonState.PRESSED, pressed_img);
+		
 		GSprite tIcon = new GSprite(ImageCache.getImage("enemies/e1.png"));
 		
 		play_btn.setLocation(100, 100);
@@ -33,15 +43,23 @@ public class TGMenuView extends GContainer{
 		add(play_btn);
 		play_btn.add(tIcon);
 		
+		info_btn.setLocation(100, 400);
+		tIcon.setAnchorTopLeft();
+		//info_btn.setAnchorCenter();
+		add(info_btn);
+		info_btn.add(tIcon);
+		
+		quit_btn.setLocation(100, 700);
+		tIcon.setAnchorTopLeft();
+		//quit_btn.setAnchorCenter();
+		add(quit_btn);
+		quit_btn.add(tIcon);
+		
 		addListener(new ButtonListener() {
 			@Override
 			public void mouseClicked(Context context) {
 				TowerGame.l1v();
-				
-				
 			}
 		});
-		
 	}
-
 }
